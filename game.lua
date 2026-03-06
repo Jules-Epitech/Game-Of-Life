@@ -53,7 +53,7 @@ function Game:update()
             for column, value in ipairs(columns) do
                 local count = 0
                 for y = row - 1, row + 1 do
-                    for x = column, column + 1 do
+                    for x = column - 1, column + 1 do
                         if not (row == y and column == x) then -- ligne pour éviter de toucher au rectangle du centre
                             local wrapper_row = ((y - 1) % self.rows) + 1 -- modulo pour gérer les cas ou ça sortirait de l'écran
                             local wrapper_column = ((x - 1) % self.columns) + 1
